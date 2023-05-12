@@ -1,0 +1,62 @@
+/* styling for form container */
+.bg-white {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* styling for form header */
+  .inputs h2 {
+    color: #333;
+  }
+  
+  /* styling for form label */
+  label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  /* styling for form radio button */
+  [type="radio"] {
+    margin-right: 10px;
+  }
+  
+  /* styling for form input */
+  input[type="text"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+  }
+  
+  /* styling for form submit button */
+  button[type="submit"] {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #555;
+  }
+  
+  /* styling for form result */
+  .prediction-result h2 {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .prediction-result h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 20px;
+    text-align: center;
+    padding: 20px;
+  }
+  

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Judul Halaman -->
+	<title>Maverick - Kelompok 4</title>
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Icon -->
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+	
+	<!-- CSS -->
+	<link rel="stylesheet" href={{ url_for('static', filename='/css/bootstrap.min.css') }} type="text/css">
+	<link rel="stylesheet" href={{ url_for('static', filename='/css/client_side.css') }}  type="text/css">
+	
+	<!-- JavaScript -->
+	<script src={{ url_for('static', filename='/js/jquery_3.6.0.min.js') }} ></script>
+	<script src={{ url_for('static', filename='/js/bootstrap_3.4.1.min.js') }} ></script>
+</head>
+
+<body id="halamanku" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+	<!-- Navigation Bar -->
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			
+			<!-- Logo -->
+			<div class="navbar-header">
+				<img src={{ url_for('static', filename='images/mave.png') }} alt="Orbit Logo" 
+				width="80" height="50" align="left">
+				<a class="navbar-brand" href="#halamanku">&#160; MAVERICK</a>
+			</div>
+			
+			<!-- Daftar Halaman -->
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#informasi">INFORMASI</a></li>
+					<li><a href="#aplikasi">APLIKASI</a></li>
+					<li><a href="#anggotaKelompok">ANGGOTA KELOMPOK</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Bagian Halaman (Informasi) -->
+	<div id="informasi" class="container-fluid">
+		<br>
+		<br>
+		<br>
+		<div class="row">
+			<div class="col-sm-6">
+				<!-- Deskripsi Aplikasi -->
+				<h2>Prediksi Berat Badan</h2>
+				<p style="text-align: justify;text-justify: inter-word;">
+					Aplikasi prediksi berat badan adalah sebuah aplikasi yang dirancang untuk membantu pengguna memperkirakan berat badan mereka berdasarkan berbagai faktor seperti tinggi badan dan jenis kelamin. Aplikasi ini dapat membantu pengguna mengelola kesehatan mereka dengan memberikan informasi tentang berapa banyak kalori yang perlu dikonsumsi dan berapa banyak latihan fisik yang perlu dilakukan untuk mencapai berat badan yang sehat.
+				</p>
+				<br>
+
+			</div>
+			
+			<div class="col-sm-6">
+				<br>
+				<br>
+				<!-- Gambar Deskripsi Aplikasi -->
+				<img src={{ url_for('static', filename='/images/Berat.jpg') }} width="500" ></img>
+			</div>
+		</div>
+		<br>
+	</div>
+	
+
+	<!-- Bagian Halaman (Aplikasi) -->
+	<div id="aplikasi" class="container-fluid">
+		<br>
+		<br>
+		<br>
+		<div class="row">
+			<div class="col-sm-6">
+				<br>
+				<br>
+				<!-- Gambar Deskripsi Aplikasi -->
+				<img src=/static//images/food.jpg width="300" ></img>
+			</div>
+
+			<div class="bg-white py-14 font-mono my-10 mx-10 rounded-lg ">
+        <div class="container flex mx-auto my-auto">
+                <h2 class="block uppercase text-center text-2xl text-gray-900">Prediksi Berat Badan</h2>
+                <form class="bg-slate-100 rounded-lg mt-6 border border-gray-200 pt-4" method="POST" action="">
+                    <div class='flex flex-wrap -mx-3 mb-3'>
+			<div class='w-full md:w-full px-3 mb-2'>
+                            <div class='w-full md:w-full px-3 mb-3'>
+				<label class='block uppercase tracking-wide text-gray-700 text-l font-bold mb-2'
+                                for='grid-text-3'>Gender</label>
+                                <div class ='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 ml-2'>
+                                    <input type="radio" id="Male" name="Gender" value="1" checked>
+                                    <label for="Male">Male</label>
+                                </div>
+                                
+                                <div class ='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 ml-2'>
+                                    <input type="radio" id="Female" name="Gender" value="0">
+                                    <label for="Female">Female</label>
+                                </div>
+                            </div>
+                            <div class='w-full md:w-full px-3 mb-3'>
+                                <label class='block uppercase tracking-wide text-gray-700 text-s font-bold mb-2'
+                                    for='grid-text-3'>Tinggi Badan</label>
+                                <input type="text"
+                                    class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500'
+                                    id='grid-text-3' type='text' placeholder='Masukkan Tinggi Badan (cm)'
+                                    name="Height" required>
+                            <div class="flex justify-end mr-3">
+                                <button
+                                    class="appearance-none bg-gray-200 uppercase block text-gray-900 px-2 py-1 shadow-sm border border-gray-400 rounded-md hover:bg-gray-300"
+                                    type="submit">Prediksi</button>
+			    </div>
+                            </div>
+                        </div>
+		     </form>
+                
+        </div>
+    </div>
+                    </div>
+                            
+                         <div class="prediction-result w-full max-w-2xl pt-5">
+                    <h2 class="block uppercase text-center text-2xl text-gray-900">Hasil Prediksi Berat Badan</h2>
+                    
+                    <h1 class="text-3xl text-center h-14 px-2 py-2 bg-slate-200 border border-gray-300 rounded-lg mt-5">
+                        {% if result is defined %}
+                        {{result}}
+                        {% endif %}
+                    </h1>
+                    
+                </div>    
+                        </div>
+                    </div
+		</div>
+		<br>
+	</div>
+
+	<!-- Bagian Halaman (Anggota Kelompok) -->
+	<div id="anggotaKelompok" class="container-fluid text-center">
+		<br>
+		<h2>ANGGOTA KELOMPOK 4</h2>
+		<h4>Tim Deployment dan Tim DS</h4>
+		<br>
+		<div class="row slideanim">
+			<div class="col-sm-4">
+				<span class="glyphicon glyphicon-user logo-small"></span>
+				<h4>Dede Yandreka</h4>
+				<p>Granada</p>
+			</div>
+			<div class="col-sm-4">
+				<span class="glyphicon glyphicon-user logo-small"></span>
+				<h4>Fandi Rahmat</h4>
+				<p>Granada</p>
+			</div>
+			<div class="col-sm-4">
+				
+				<span class="glyphicon glyphicon-user logo-small"></span>
+				<h4>Gogor Putra</h4>
+				<p>Granada</p>
+			</div>
+		</div>
+	    <br>
+	    <div class="row slideanim">
+			<div class="col-sm-6">
+				<span class="glyphicon glyphicon-user logo-small"></span>
+				<h4>Hamdi Syukron</h4>
+				<p>Granada</p>
+			</div>
+			<div class="col-sm-6">
+				<span class="glyphicon glyphicon-user logo-small"></span>
+				<h4>Safrizal</h4>
+				<p>Granada</p>
+			</div>
+	    </div>
+	</div>
+
+	<!-- Footer -->
+	<footer class="container-fluid text-center">
+		<a href="#halamanku" title="To Top">
+			<span class="glyphicon glyphicon-chevron-up"></span>
+		</a>
+		<p>Maverick - Kelompok 4<br> <a href="https://orbitfutureacademy.id/">orbitfutureacademy.id</a></p>
+	</footer>
+
+	<!-- JavaScript untuk Animasi Scroll dan Prediksi Model -->
+	<script  src={{ url_for('static', filename='/js/client_side.js') }}></script>
+
+</body>
+</html>
